@@ -8,13 +8,18 @@ const routes = [
     component: () => import('../views/home/home')
   },
   {
-    path: '/tiktok_video',
-    name: 'TiktokVideo',
-    component: () => import('../views/TiktokVideo/TiktokVideo')
+    path: '/video_women',
+    name: 'Video-women',
+    component: () => import('../views/Video_women/Video_women')
   },
   {
-    path: '/calendar',
-    name: 'Calendar',
+    path: '/video_man',
+    name: 'TiktokVideo',
+    component: () => import('../views/Video_man/Video_man')
+  },
+  {
+    path: '/daily',
+    name: 'Daily',
     component: () => import('../views/calendar/calendar')
   }
 ]

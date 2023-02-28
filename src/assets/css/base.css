@@ -22,6 +22,9 @@ a {
 i {
   font-style: normal;
 }
+h1{
+  margin: 0;
+}
 h3{
   font-size: 19px;
 }

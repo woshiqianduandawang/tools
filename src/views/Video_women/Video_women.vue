@@ -9,20 +9,18 @@
 
 <script>
 import axios from "axios";
-import { onBeforeMount, reactive, ref, onMounted } from "vue";
+import { onMounted } from "vue";
 export default {
-  name: "TiktokVideo",
+  name: "Video-women",
 
   setup() {
     onMounted(() => {
       if (
         /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)
       ) {
-        document.querySelector("#father").style.width = window.screen.width + "px";
+        document.querySelector("#father").style.width =
+          window.screen.width + "px";
         console.log(window.screen.width);
-      } else {
-        // 执行桌面端代码
-        console.log(window.screen.height);
       }
     });
 
@@ -33,6 +31,7 @@ export default {
     function GetVideo() {
       if (count != 0) {
         document.querySelector("#div").innerHTML = Video_Log[count - 1];
+        document.querySelector("video").style.width = "100%";
         count--;
       } else {
         count = 0;
@@ -50,7 +49,7 @@ export default {
 
             // 插入元素
             document.querySelector("#div").innerHTML = result;
-            document.querySelector("video").style.width = '100%'
+            document.querySelector("video").style.width = "100%";
           })
           .catch((err) => {
             console.log("失败：", err);
@@ -59,7 +58,14 @@ export default {
     }
     // 上一个视频
     function BackVideo() {
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)
+      ) {
+        document.querySelector("#div").style.width = window.screen.width + "px";
+        console.log(window.screen.width);
+      }
       document.querySelector("#div").innerHTML = Video_Log[count + 1];
+      document.querySelector("video").style.width = "100%";
       count++;
     }
     return {
